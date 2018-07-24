@@ -8,15 +8,17 @@ namespace PACEBuzz
 {
     public class TeamScoreBoardWrapper
     {
-        public Dictionary<Team,Int32> teamScores;
+        public List<Team> teamScores;
         private int index;
         public TeamScoreBoardWrapper ()
         {
             index = 0;
-            teamScores = new Dictionary<Team, int>();
-            teamScores.Add(new Team { Name = "Team A", index = this.index++ }, 5);
-            teamScores.Add(new Team { Name = "Team B", index = this.index++ }, 10);
-            teamScores.Add(new Team { Name = "Team C", index = this.index++ }, 15);
+            teamScores = new List<Team>();
+            teamScores.Add(new Team { Name = "Team A", index = this.index++, score = 5 });
+            teamScores.Add(new Team { Name = "Team B", index = this.index++, score = 15 });
+            teamScores.Add(new Team { Name = "Team C", index = this.index++, score = 10 });
+            teamScores.Add(new Team { Name = "Team D", index = this.index++, score = 10 });
+            teamScores.Add(new Team { Name = "Team E", index = this.index++, score = 10 });
         }
     }
 
@@ -24,5 +26,6 @@ namespace PACEBuzz
     {
         public String Name;
         public int index;
+        public int score;
     }
 }

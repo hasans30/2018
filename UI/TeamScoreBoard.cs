@@ -29,14 +29,14 @@ namespace PACEBuzz
             panel.Controls.Add(new Label() { Text = "Score" }, 1, 0);
 
             //tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            foreach (var key in ts.teamScores.Keys)
+            foreach (var score in ts.teamScores)
             {
                 panel.RowCount++;
                 panel.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-                panel.Controls.Add(new Label() { Text = key.Name, AutoSize = true },0, panel.RowCount-1);
+                panel.Controls.Add(new Label() { Text = score.Name, AutoSize = true },0, panel.RowCount-1);
                 panel.Controls.Add(new Label()
                 {
-                    Text = ts.teamScores[key].ToString(),
+                    Text = score.score.ToString(),
                     AutoSize = true
                 }, 1, panel.RowCount-1);
                 
